@@ -48,7 +48,7 @@ def get_filters():
             print("You have entered an invalid value. Kindly ensure that the day is in lower case")
     print("The month chosen is {0}".format(month.title()))
 
-    print('-'*40)
+    print('-'*80)
     return city, month, day
 
 
@@ -117,7 +117,7 @@ def time_stats(df):
     print("The commonly travelled start hour is: ", popular_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def station_stats(df):
@@ -140,7 +140,7 @@ def station_stats(df):
     print("The commonly used end station is", popular_combination)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def trip_duration_stats(df):
@@ -151,14 +151,25 @@ def trip_duration_stats(df):
 
     # display total travel time
     sum_traveltime = df['Trip Duration'].sum()
-    print("The total travel time is: ", sum_traveltime)
+
+    #Find the total travel time in minutes and seconds
+    minutes, seconds = divmod(sum_traveltime, 60)
+    #Total travel time in hours and minutes
+    hours, minutes = divmod(minutes, 60)
+    print("The total travel time is {} hour(s), {} minute(s) and {} second(s): ".format(hours, minutes, seconds))
 
     # display mean travel time
     mean_traveltime = df['Trip Duration'].mean()
-    print("The average/mean travel time is: ", mean_traveltime)
+    min, sec = divmod(mean_traveltime, 60)
+    #If minutes are greater than 60
+    if min > 60:
+        hr, min = divmod(min, 60)
+        print("The average/mean travel time is {} hour(s), {} minute(s) and {} second(s): ".format(hr, min, sec))
+    else:
+        print("The average/mean travel time is {} minute(s) and {} second(s): ".format(min, sec))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def user_stats(df):
@@ -193,7 +204,7 @@ def user_stats(df):
     except:
         print("No birth year value exists for this input")
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 #Function to display raw data
 def returnRawData(df):
@@ -220,7 +231,7 @@ def returnRawData(df):
             print(df[counter:counter+5])
         elif retrieved_data != "yes":
             break
-    print('-'*40)
+    print('-'*80)
 def main():
     while True:
         city, month, day = get_filters()
