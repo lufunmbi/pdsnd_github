@@ -43,7 +43,7 @@ def get_filters():
             print("You have entered an invalid value. Kindly ensure that the day is in lower case")
     print("The month chosen is {0}".format(month.title()))
 
-    print('-'*40)
+    print('-'*80)
     return city, month, day
 
 
@@ -112,7 +112,7 @@ def time_stats(df):
     print("The commonly travelled start hour is: ", popular_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def station_stats(df):
@@ -135,7 +135,7 @@ def station_stats(df):
     print("The commonly used end station is", popular_combination)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def trip_duration_stats(df):
@@ -153,7 +153,7 @@ def trip_duration_stats(df):
     print("The average/mean travel time is: ", mean_traveltime)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def user_stats(df):
@@ -188,7 +188,7 @@ def user_stats(df):
     except:
         print("No birth year value exists for this input")
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 #Function to display raw data
 def returnRawData(df):
@@ -215,7 +215,7 @@ def returnRawData(df):
             print(df[counter:counter+5])
         elif retrieved_data != "yes":
             break
-    print('-'*40)
+    print('-'*80)
 def main():
     while True:
         city, month, day = get_filters()
