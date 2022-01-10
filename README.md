@@ -21,3 +21,7 @@ I used csv files from Chicago, New York and Washington all cities in the United 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 Many thanks to stack overflow and geeksforgeeks.com for their help mostly with my Python syntax
+
+### Documentation push
+The changes made to the README is solely for the purpose of adequate documentation that whoever forks this repo may have a proper idea of what the project is about.
+And I hope this helps.
